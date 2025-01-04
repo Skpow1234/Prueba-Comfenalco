@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="comerciante_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0c3a2d6-41d1-4b2b-8288-cdef58dbb144">
+
+    <!-- Parámetros -->
+    <parameter name="nombre" class="java.lang.String"/>
+    <parameter name="departamento" class="java.lang.String"/>
+    <parameter name="municipio" class="java.lang.String"/>
+    <parameter name="telefono" class="java.lang.String"/>
+    <parameter name="correo" class="java.lang.String"/>
+    <parameter name="fechaRegistro" class="java.util.Date"/>
+    <parameter name="estado" class="java.lang.String"/>
+
+    <!-- Encabezado del Reporte -->
+    <title>
+        <band height="50" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="10" width="555" height="30" uuid="title-1"/>
+                <textElement textAlignment="Center">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Reporte de Comerciante]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <!-- Detalles del Reporte -->
+    <detail>
+        <band height="160" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="10" width="200" height="20" uuid="nombre-1"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Nombre: " + $P{nombre}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="40" width="200" height="20" uuid="departamento-1"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Departamento: " + $P{departamento}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="70" width="200" height="20" uuid="municipio-1"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Municipio: " + $P{municipio}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="100" width="200" height="20" uuid="telefono-1"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Teléfono: " + $P{telefono}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="130" width="200" height="20" uuid="correo-1"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Correo Electrónico: " + $P{correo}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="300" y="10" width="200" height="20" uuid="fechaRegistro-1"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Fecha de Registro: " + new java.text.SimpleDateFormat("dd/MM/yyyy").format($P{fechaRegistro})]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="300" y="40" width="200" height="20" uuid="estado-1"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Estado: " + $P{estado}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
